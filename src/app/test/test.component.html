@@ -1,0 +1,55 @@
+<app-brand-band type="medium"
+></app-brand-band>
+<div class="row-2">
+  <ul>
+      <li><a href="index.html" class="active"><p style="margin-top: 185px;"></p></a></li>
+  </ul>
+<app-global-navigation
+  name="OpenEval"
+  buttonText="Login"
+  [tabs]="globalNavTabs"
+  (activeTab)="activeTab"
+></app-global-navigation>
+<app-page-header
+  icon="survey"
+  title="Prof. Stasko"
+  subtitle="Computer Science Professor"
+></app-page-header>
+<div class="slds-m-horizontal_small">
+  <app-input
+    required
+    label="First Name"
+    placeholder="Enter Your First Name"
+    [(entry)]="firstName"
+  ></app-input>
+  <app-picklist
+    required
+    label="Created Surveys"
+    placeholder="Select a Survey"
+    [options]="options"
+  ></app-picklist>
+  <app-radio-button-group
+    required
+    label="Overall Course Satisfaction"
+    [options]="rankings"
+    [(selection)]="selection"
+    radioButtonGroupID = "rbg"
+  ></app-radio-button-group>
+  <app-radio-group
+    required
+    label="The pace of the course is:"
+    [options]="coursePaceOptions"
+    [(selection)]="mcSelection"
+    radioGroupID = "rg"
+  ></app-radio-group>
+  <app-card
+    icon="survey"
+    title="Active Surveys"
+    [cardButtons]="cardButtons"
+  >
+    <app-accordion body
+      [buttons]="accordionButtons"
+      [tabs]="accordionTabs"
+    ></app-accordion>
+  </app-card>
+</div>
